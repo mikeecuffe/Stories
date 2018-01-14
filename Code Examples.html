@@ -1,4 +1,4 @@
-<tw-storydata name="Code Examples" startnode="1" creator="Twine" creator-version="2.1.3" ifid="963E4B23-7F39-4F82-AB60-B0F5C50062F7" format="Harlowe" format-version="2.0.1" options="" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">tw-hook[name="hidden"] {
+<tw-storydata name="Code Examples" startnode="1" creator="Twine" creator-version="2.2.1" ifid="963E4B23-7F39-4F82-AB60-B0F5C50062F7" zoom="1" format="Harlowe" format-version="2.0.1" options="" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">tw-hook[name="hidden"] {
   display: none;
 }
 .hidden {
@@ -22,69 +22,71 @@
   position: sticky;
   top: 10px;
 }
+
 </style><script role="script" id="twine-user-script" type="text/twine-javascript">
-</script><tw-passagedata pid="1" name="The Bathroom" tags="" position="583,227">&lt;!--this is a (html) comment--&gt;
-(set: $player&#x27;s location to &quot;Bathroom&quot;)
 
-You can see a bunch of stuff in the bathroom: (print: $Bathroom&#x27;s content)
+</script><tw-passagedata pid="1" name="The Bathroom" tags="" position="583,227" size="100,100">&lt;!--this is a (html) comment--&gt;
+(set: $player&#39;s location to &quot;Bathroom&quot;)
 
-(if: $Bathroom&#x27;s content contains &quot;cup&quot;)[
+You can see a bunch of stuff in the bathroom: (print: $Bathroom&#39;s content)
+
+(if: $Bathroom&#39;s content contains &quot;cup&quot;)[
   you see a (link-reveal: &quot;cup&quot;)[\
 &lt;!-- clicking the link picks up the item --&gt;
-    (set: $Bathroom&#x27;s content to it - (a:&quot;cup&quot;))\
-    (set: $player&#x27;s inv to it + (a:&quot;cup&quot;)) and you steal it (.. real nice pal!)]\
+    (set: $Bathroom&#39;s content to it - (a:&quot;cup&quot;))\
+    (set: $player&#39;s inv to it + (a:&quot;cup&quot;)) and you steal it (.. real nice pal!)]\
 ]\
-(if: $Bathroom&#x27;s content contains &quot;towel&quot;)[\
+(if: $Bathroom&#39;s content contains &quot;towel&quot;)[\
   and your (link-reveal: &quot;towel&quot;)[\
 &lt;!-- clicking the link picks up the item --&gt;
-    (set: $Bathroom&#x27;s content to it - (a:&quot;towel&quot;))\
-	(set: $player&#x27;s inv to it + (a:&quot;towel&quot;)), as you pick up the towel it bites you! but you eventually manage to subdue it..
+    (set: $Bathroom&#39;s content to it - (a:&quot;towel&quot;))\
+	(set: $player&#39;s inv to it + (a:&quot;towel&quot;)), as you pick up the towel it bites you! but you eventually manage to subdue it..
 	Sadly that bite has affected your overall well-being\
-	 :( (set: $player&#x27;s health to it - 1)\
+	 :( (set: $player&#39;s health to it - 1)\
 	
 	Ready to move on?
 	[[move to next passage-&gt;Meet Rupert]]
   ] (geez. How did it get here?)
 ]
 
-</tw-passagedata><tw-passagedata pid="2" name="Characters" tags="" position="473,227">&lt;!-- This passage depends on the World passage being run first --&gt;
+</tw-passagedata><tw-passagedata pid="2" name="Characters" tags="" position="473,227" size="100,100">&lt;!-- This passage depends on the World passage being run first --&gt;
 {
   (set: $player to $person)
   (set: $rupert to $person)
-  (set: $rupert&#x27;s name to &quot;rupert bear&quot;)
-}</tw-passagedata><tw-passagedata pid="3" name="Floating Sidebar" tags="header" position="713,227">{
+  (set: $rupert&#39;s name to &quot;rupert bear&quot;)
+}</tw-passagedata><tw-passagedata pid="3" name="Floating Sidebar" tags="header" position="713,227" size="100,100">{
   &lt;div class=&quot;sticky&quot;&gt;
 	&lt;div class=&quot;box sidebar&quot;&gt;
 &lt;!-- whitespace is reduced thanks to {} markup! --&gt;
 &lt;!-- sidebar stats are refreshed thanks to the live macro --&gt;
 	  (live: 0.5s) [
-		health: (print:$player&#x27;s health)&lt;br&gt;
-		happiness: (print:$player&#x27;s happiness of $happy_described)&lt;br&gt;
+		health: (print:$player&#39;s health)&lt;br&gt;
+		happiness: (print:$player&#39;s happiness of $happy_described)&lt;br&gt;
 &lt;!-- create a bullet list describing things in the inventory --&gt;
-		inventory: (if: $player&#x27;s inv&#x27;s length is 0)[most empty]
+		inventory: (if: $player&#39;s inv&#39;s length is 0)[most empty]
 		(else:) [
-		  	(for: each _item, ...$player&#x27;s inv)
+		  	(for: each _item, ...$player&#39;s inv)
 			  [* _item: (print: _item of $things_described)]
 		]
-		location: (print: (passage:)&#x27;s name)
+		location: (print: (passage:)&#39;s name)
 	  ]			
 	&lt;/div&gt;
   &lt;/div&gt;
-}</tw-passagedata><tw-passagedata pid="4" name="Meet Rupert" tags="" position="583,377">
+}</tw-passagedata><tw-passagedata pid="4" name="Meet Rupert" tags="" position="583,377" size="100,100">
 you see a tall white bear wearing a jumper and trousers with a matching tartan scarf.
-&quot;Hello. my name is (print: $rupert&#x27;s name).
-(if: $player&#x27;s inv contains &quot;cup&quot;)[&quot;Hey! what do you think you&#x27;re doing with my cup?!&quot;]
-(else:)[&quot;You look like an honest sort.. what&#x27;s your name?&quot;]
+&quot;Hello. my name is (print: $rupert&#39;s name).
+(if: $player&#39;s inv contains &quot;cup&quot;)[&quot;Hey! what do you think you&#39;re doing with my cup?!&quot;]
+(else:)[&quot;You look like an honest sort.. what&#39;s your name?&quot;]
 
 
-[[return-&gt;The Bathroom]] </tw-passagedata><tw-passagedata pid="5" name="Contents Of Rooms" tags="startup" position="579,117">{
+[[return-&gt;The Bathroom]] </tw-passagedata><tw-passagedata pid="5" name="Contents Of Rooms" tags="startup" position="579,117" size="100,100">{
   (set: $Bathroom to (dm:)) 
-  (set: $Bathroom&#x27;s content to (a:
+  (set: $Bathroom&#39;s content to (a:
 	  &quot;cup&quot;,
 	  &quot;towel&quot;
 	)
   )
-}</tw-passagedata><tw-passagedata pid="6" name="Objects That Can Move" tags="startup" position="469,117">{
+}</tw-passagedata><tw-passagedata pid="6" name="Objects That Can Move" tags="startup" position="469,117" size="100,100">{
   (set: $things_described to 
 	(dm:
 	&quot;cup&quot;,&quot;container of refreshing beverages&quot;,
@@ -93,7 +95,7 @@ you see a tall white bear wearing a jumper and trousers with a matching tartan s
 	&quot;towel&quot;,&quot;the most important item a hitchhiker can carry&quot;
 	)
   )
-}</tw-passagedata><tw-passagedata pid="7" name="World" tags="startup" position="359,117">{
+}</tw-passagedata><tw-passagedata pid="7" name="World" tags="startup" position="359,117" size="100,100">{
   (set: $happy_described to 
 	(dm:
 	1,&quot;sad&quot;,
@@ -102,11 +104,11 @@ you see a tall white bear wearing a jumper and trousers with a matching tartan s
 	)
   )
   (set: $person to (dm:))
-  (set: $person&#x27;s name to &quot;&quot;)
-  (set: $person&#x27;s happiness to 10)
-  (set: $person&#x27;s health to 10)
-  (set: $person&#x27;s inv to (a:))
-  (set: $person&#x27;s location to &quot;&quot;)
+  (set: $person&#39;s name to &quot;&quot;)
+  (set: $person&#39;s happiness to 10)
+  (set: $person&#39;s health to 10)
+  (set: $person&#39;s inv to (a:))
+  (set: $person&#39;s location to &quot;&quot;)
 
 &lt;!-- 
   The Characters passage references the $person variable
@@ -114,7 +116,7 @@ you see a tall white bear wearing a jumper and trousers with a matching tartan s
 --&gt;
   (display: &quot;Characters&quot;)
 }
-</tw-passagedata><tw-passagedata pid="8" name="stratchpad" tags="" position="249,117">&lt;!-- run the passage &quot;Run Code Stuff First&quot; but hide the output by connecting some css to the hook &#x27;hidden&#x27;. found out its much easier to use the special &#x27;startup&#x27; tag to get the passage to run once on startup. ho-hum
+</tw-passagedata><tw-passagedata pid="8" name="stratchpad" tags="" position="249,117" size="100,100">&lt;!-- run the passage &quot;Run Code Stuff First&quot; but hide the output by connecting some css to the hook &#39;hidden&#39;. found out its much easier to use the special &#39;startup&#39; tag to get the passage to run once on startup. ho-hum
 |hidden&gt;[(display:&quot;Run Code Stuff First&quot;)]--!&gt;
-&lt;!-- insert the passage &quot;sidebar-stats&quot; into this passage using the display macro. Found out its much easier to use the special &#x27;header&#x27; tag to get the passage to be included in every passage. ho-hum
+&lt;!-- insert the passage &quot;sidebar-stats&quot; into this passage using the display macro. Found out its much easier to use the special &#39;header&#39; tag to get the passage to be included in every passage. ho-hum
 (display:&quot;sidebar-stats&quot;) --&gt;</tw-passagedata></tw-storydata>
